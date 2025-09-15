@@ -24,13 +24,13 @@ def processing(volts, threshold):
    # We have to use a 'for' loop to check every measurement from the input list.
    for v in volts:
       # We have to use an 'if' conditional to select if the measurement is correct or not.
-      if 0 < v < threshold
-      # If it is correct, we have to convert it to milivolts and add it to the new list.
-      mv = v*1000
-      correctMeasurements.append(mv)
-      else
-      # If it is wrong, we print a message to let us know.
-      print(f"Eliminating wrong value: {v} V")
+      if 0 < v < threshold:
+         # If it is correct, we have to convert it to milivolts and add it to the new list.
+         mv = v*1000
+         correctMeasurements.append(mv)
+      else:
+         # If it is wrong, we print a message to let us know.
+         print(f"Eliminating wrong value: {v} V")
 
    # At the end of the function, it will show us the results.
    return correctMeasurements
