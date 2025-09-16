@@ -1,24 +1,23 @@
 # -- My First Attempt using Python --
 
-# 1.INPUT DATA.
-# I am going to introduce random values from a fake sensor, 
-# an initial signal expressed as a list of measurements in volts.
-# This list contains wrong values, as negative inputs or higher values.
+# 1. INPUT DATA
+# Define an initial signal represented as a list of measurements in volts.
+# This list simulates a sensor's output and includes invalid values
+# (e.g., negative numbers or values above a certain threshold).
 
 measurements = [1.2, 1.5, -0.5, 1.6, 8.5, 1.1, 1.8, 9.1, -1.2, 1.4]
 
 # 2.PROCESSING FUNCTION.
-# I will create a function so the code stays reusable and tidy.
+# We will create a function so the code stays reusable and tidy.
 
 def processing(volts, threshold):
 
-   # This function will: 
-   # - Analys the list of measurements in volts.
-   # - Filter incorrect values (negative or above a threshold).
-   # Converts valid values to millivolts (mV).
-   # Returns a list with the processed values.
+   """Analyzes a list of measurements in volts.
+   This function filters out invalid values (negative or above a given threshold),
+   converts the valid measurements to millivolts (mV), and returns a new list 
+   containing only the processed, valid data."""
 
-   # I create an empty list so I can save the results later. 
+   # We create an empty list so I can save the results later. 
    correctMeasurements = []
 
    # We have to use a 'for' loop to check every measurement from the input list.
@@ -34,3 +33,12 @@ def processing(volts, threshold):
 
    # At the end of the function, it will show us the results.
    return correctMeasurements
+
+# 3.SCRIPT EXECUTION
+print("Starting measurement analysis...")
+
+# We call our function and send it the data and the threshold value
+validMeasurements = processing(measurements, 5.0)
+
+print("Analysis finished")
+print(f"Valid Measurements (mV): {validMeasurements}")
