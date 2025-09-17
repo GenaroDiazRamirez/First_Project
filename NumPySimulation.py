@@ -21,7 +21,7 @@ sineSignal = np.sin(2*np.pi*frequency*time)
 
 # 4. ADD NOISE
 # Generate random noise to add to the signal.
-# 'np.random.noise' creates random noise from a normal (Gaussian) distribution.
+# 'np.random.noise' creates noise from a normal (Gaussian) distribution.
 # This function uses a scale parameter that controls the amplitude of the noise.
 noise = np.random.normal(scale = 0.5, size = numPoints)
 noisySignal = sineSignal+noise
@@ -50,18 +50,18 @@ plt.show()
 print("Performing basic signal analysis with NumPy...")
 
 # Calculate statistics of the noisy signal using built-in methods.
-# These operations are too much faster than normal Python operations.
+# These operations are v faster than standar Python loops.
 mean = noisySignal.mean() 
 max = noisySignal.max()
 min = noisySignal.min()
 
-# Print the values extracted form the functions.
+# Print the values extracted from the analysis.
 # .4f formats to 4 decimal places.
 print(f"Mean of the signal: {mean:.4f}") 
 print(f"Max value of the signal: {max:.4f}")
 print(f"Min value of the signal: {min:.4f}")
 
-# Filter the signal to find all data poitns above a certain amplitude.
-# Use bolean indexing here.
+# Filter the signal to find all data points above a certain amplitude.
+# Use boolean indexing here.
 highPoints = noisySignal[noisySignal > 2]
-print(f"Found {len(highPoints)} data points with amplitude over 1.5 V")
+print(f"Found {len(highPoints)} data points with amplitude over 2 V")
